@@ -1,6 +1,8 @@
+using JPollen.Models.Results;
+
 namespace JPollen.Rules;
 
 public interface IJRule
 { 
-    void ExecuteRule();
+    JRuleResult ExecuteRule();
 }

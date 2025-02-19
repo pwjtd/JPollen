@@ -3,13 +3,8 @@ using JPollen.Rules.Base;
 
 namespace JPollen.Rules;
 
-public class JSkipRule : JRule
+public class JMatchRule : JRule
 {
-    public JSkipRule()
-    {
-        
-    }
-
     public override JRuleResult ExecuteRule()
     {
         throw new NotImplementedException();

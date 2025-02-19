@@ -1,46 +1,56 @@
-﻿using JPollen.Processing;
+﻿namespace CasePresenter;
 
-namespace Example1;
-
-class Program
+public class CasePresenter
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        var translateDictionary = new Dictionary<string, string>()
+        int item = 0;
+        ConsoleKeyInfo key;
+        var cases = RegisterCases();
+        while (true)
         {
-            {"One","Jeden"},
-            {"Two","Dwa"},
-            {"Three","Trzy"}
-        };
-        var replaceIdKeysToGuidDictionary = new Dictionary<string, string>()
-        {
-            {"Id","Guid"},
-        };
-        var replaceIdValuesToGuidDictionary = new Dictionary<string, string>()
-        {
-            {"2140","48F66EAB-3749-49A4-A169-AAA4E2788B98"},
-        };
-        var processor = new JProcessor()
-            .Configure(x =>
+            Console.Clear();
+            Console.WriteLine("========== MENU ==========");
+
+            for (int i = 0; i < cases.Count; i++)
+            {
+                var caseItem = cases.ElementAt(i);
+                Console.WriteLine((item == i ? "--> " : "    ") + $"{i+1}. {caseItem.Title}");
+            }
+
+            Console.WriteLine((item == cases.Count ? "--> " : "    ") + $"{cases.Count + 1}. Exit");
+            
+            key = Console.ReadKey(true);
+
+            if (key.Key == ConsoleKey.DownArrow)
+                item = (item + 1) % (cases.Count + 1);
+            else if (key.Key == ConsoleKey.UpArrow)
+                item = (item - 1 + cases.Count) % (cases.Count + 1);
+            else if (key.Key == ConsoleKey.Enter)
+            {
+                Console.Clear();
+                
+                if (item == cases.Count)
                 {
-                    x.AddContext(c =>
-                    {
-                        c.Name = "Translate_EN_to_PL";
-                        c.Swap(rule =>
-                        {
-                            rule.SwapValues(translateDictionary);
-                        });
-                    });
-                    x.AddContext(c =>
-                    {
-                        c.Name = "Replace Id to GUID";
-                        c.Swap(rule =>
-                        {
-                            rule.SwapKeys(replaceIdKeysToGuidDictionary);
-                            rule.SwapValues(replaceIdValuesToGuidDictionary); // with filter
-                        });
-                    });
-                });
-        var foldedJson = processor.FoldJson("");
+                    Console.WriteLine("Exiting program");
+                    return;
+                }
+
+                var caseItem = cases.ElementAt(item);
+                caseItem.Run();
+                
+                Console.ReadKey();
+            }
+        }
+    }
+
+    private static List<CaseBase> RegisterCases()
+    {
+        var cases = new List<CaseBase>
+        {
+            new FoldJsonToSchemeCase(),
+            new FoldJsonToSchemeCase(),
+        };
+        return cases;
     }
 }

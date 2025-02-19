@@ -1,7 +1,7 @@
-namespace JPollen.Models.Results;
+namespace JPollen.Models.Results.Base;
 
-public class JResult
+public abstract class JResult
 {
     public bool IsSuccess { get; set; }
     public string Message { get; set; }
-}
+}   

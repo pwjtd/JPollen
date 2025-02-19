@@ -1,6 +1,6 @@
 namespace JPollen.Storage;
 
-public class JKeyStorage
+public class JReferenceStorage
 {
     
 }

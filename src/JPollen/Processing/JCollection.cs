@@ -6,12 +6,10 @@ public class JCollection
 {
     public JCollection()
     {
-        ValueStorage = new JValueStorage();
-        KeyStorage = new JKeyStorage();
+        RowStorage = new JRowStorage();
     }
     
     public string Root { get; internal set; }
-    public string Scheme { get; private set; }
-    public JValueStorage ValueStorage { get; private set; }
-    public JKeyStorage KeyStorage { get; private set; }
+    public string Scheme { get; internal set; }
+    public JRowStorage RowStorage { get; internal set; }
 }
