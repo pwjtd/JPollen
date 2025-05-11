@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D7629031-4EDE-44AA-A957-A724DC591CF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6A763403-1368-4246-A50C-C4A92A2B0B10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPollen.UnitTests", "tests\JPollen.UnitTests\JPollen.UnitTests.csproj", "{DB99748F-E652-447A-A0ED-C718609964E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPollen", "src\JPollen\JPollen.csproj", "{5A66484C-79C3-4D90-B5AB-58F05B9AD9B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB99748F-E652-447A-A0ED-C718609964E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB99748F-E652-447A-A0ED-C718609964E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB99748F-E652-447A-A0ED-C718609964E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB99748F-E652-447A-A0ED-C718609964E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A66484C-79C3-4D90-B5AB-58F05B9AD9B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A66484C-79C3-4D90-B5AB-58F05B9AD9B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A66484C-79C3-4D90-B5AB-58F05B9AD9B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A66484C-79C3-4D90-B5AB-58F05B9AD9B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB99748F-E652-447A-A0ED-C718609964E3} = {6A763403-1368-4246-A50C-C4A92A2B0B10}
+		{5A66484C-79C3-4D90-B5AB-58F05B9AD9B5} = {D7629031-4EDE-44AA-A957-A724DC591CF3}
+	EndGlobalSection
+EndGlobal
